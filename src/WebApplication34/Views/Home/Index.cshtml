@@ -65,6 +65,18 @@
     </a>
 </div>
 
+@{
+    var assembly = System.Reflection.Assembly.Load(new System.Reflection.AssemblyName("Microsoft.AspNetCore.Mvc.Core"));
+    var mvcAssemblyLocation = assembly.Location;
+    assembly = System.Reflection.Assembly.Load(new System.Reflection.AssemblyName("Microsoft.AspNetCore.Razor"));
+    var razorAssemblyLocation = assembly.Location;
+}
+
+<h1>MVC Binary Location</h1>
+<p>@mvcAssemblyLocation</p>
+<h1>Razor Binary Location</h1>
+<p>@razorAssemblyLocation</p>
+
 <div class="row">
     <div class="col-md-3">
         <h2>Application uses</h2>
